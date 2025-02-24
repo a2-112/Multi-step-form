@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
 main {
     background-color: #f0f6ff;
     display: flex;
@@ -222,8 +228,8 @@ h3 {
 .switch {
     position: relative;
     display: inline-block;
-    width: 34px;
-    height: 20px;
+    width: 40px;
+    height: 25px;
     border: 3px solid rgb(255, 123, 0);
     border-radius: 34px;
 }
@@ -410,9 +416,9 @@ b {
     /* Show only active step */
 }
 
-@media(max-width:50em) {
+@media(max-width:45em) {
     main{
-        background-color: hsl(206, 94%, 87%);
+        background-color: hsl(217, 100%, 97%);
     }
     
         .container {
@@ -420,7 +426,9 @@ b {
             height: 100%;
             width: 100%;
             margin: 0;
+            padding: 0;
             position: absolute;
+            background-color: hsl(206, 84%, 93%);
         }
 
         .sidebar {
@@ -443,13 +451,15 @@ b {
         }
 
         .form-container {
-            max-width: 85%;
+            max-width: 95%;
             width: 100%;
             margin: 1em auto ;
             position: relative;
             bottom: 6%; 
             background-color: hsl(231, 100%, 99%);
             border-radius: 10px;
+            box-shadow: 5px 5px 10px hsl(229, 24%, 87%);
+            z-index: 0;
         }
         .form-step{
             padding-inline: 1em;
@@ -466,14 +476,25 @@ b {
         button {
             width: 100%;
             padding: 12px;
+            margin: 1em;
             font-size: 0.9em;
         }
         .plan-container{
          display: flex;
          flex-direction: column;
          align-items: flex-start;
-         justify-: space-between;
+         gap: 0.7em;
         }
+        .plan{
+           flex-direction: row;
+           align-items: center;
+           padding: 0;
+           gap: 1em;
+        }
+        .plan img{
+            padding-inline: 0.7em;
+        }
+        
 
         .addon-container {
             width: 100%;
@@ -485,6 +506,8 @@ b {
             width: 100%;
             padding: 10px;
             font-size: 14px;
+            flex-direction: row;
+            font-size: 0.8rem;
         }
 
         .billing-toggle {
