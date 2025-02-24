@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar start -->
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <ol>
+                    <li class="active" id="step1-tab"><span class="span_text">1</span>
+                        <p>Step 1 <span>Your Info</span> </p>
+                    </li>
+                    <li id="step2-tab"><span class="span_text">2</span>
+                        <p>Step 2 <span>Select Plan</span></p>
+                    </li>
+                    <li id="step3-tab"><span class="span_text">3</span>
+                        <p>Step 3 <span>Add-ons</span></p< /li>
+                    <li id="step4-tab"><span class="span_text">4</span>
+                        <p>Step 4 <span>Summary</span></p>
+                    </li>
+                </ol>
+            </div>
+            <div class="form-container">
+                <section class="form-step active" id="step1">
+                    <h2>Personal Info</h2>
+                    <p>Please provide your name, email address, and phone number.</p>
+                    <div class="input-con">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="e.g. Judith Maka" oninput="validateForm()">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="e.g. judithmaka@lorem.com" oninput="validateForm()">
+                        <label for="contact">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" oninput="validateForm()">
+                        <button id="nextButton1" onclick=" nextBtn()" disabled>Next Step</button>
+                    </div>
+                </section>
+
+
+                <section class="form-step section__2" id="step2">
+                    <h2>Select Plan</h2>
+                    <p>You have the option of monthly or yearly billing.</p>
+
+                    <div class="plan-container">
+                        <div class="plan" onclick="selectPlan(this , 'Arcade')">
+                            <img src="/multi-step-form-main/assets/images/icon-arcade.svg" alt="">
+                            <div class="choice">
+                                <h3>Arcade</h3>
+                                <p id="arcade-price">$9/mo</p>
+                                <p class="free-text">2 months free</p>
+                            </div>
+
+                        </div>
+                        <div class="plan" onclick="selectPlan(this , 'Advanced')">
+                            <img src="/multi-step-form-main/assets/images/icon-advanced.svg" alt="">
+                            <div class="choice">
+                                <h3>Advanced</h3>
+                                <p id="advanced-price">$12/mo</p>
+                                <p class="free-text">2 months free</p>
+                            </div>
+
+                        </div>
+                        <div class="plan" onclick="selectPlan(this, 'Pro')">
+                            <img src="/multi-step-form-main/assets/images/icon-pro.svg" alt="">
+                            <div class="choice">
+                                <h3>Pro</h3>
+                                <p id="pro-price">$15/mo</p>
+                                <p class="free-text">2 months free</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle">
+                        <p>Monthly</p>
+                        <label class="switch">
+                            <input type="checkbox" id="billingToggle" onchange="toggleBillingPeriod()">
+                            <span class="slider round"></span>
+                        </label>
+                        <p>Yearly</p>
+                    </div>
+
+                    <div class="button-container">
+                        <button onclick="prevStep(1)" class="go-back">Go Back</button>
+                        <button id="nextButton2" class="button" onclick="nextStep(2)">Next Step</button>
+                    </div>
+
+                </section>
+
+                <section class="form-step" id="step3">
+                    <h2>Pick add-ons</h2>
+                    <p>Add-ons help enhance your gaming experience.</p>
+
+                    <div class="addon-container">
+                        <div class="addon" onclick="selectAddon(this, 'Online service')">
+                            <div class="checkbox">
+                                <img src="/multi-step-form-main/assets/images/icon-checkmark.svg" alt="Checkmark">
+                            </div>
+                            <div class="add-info">
+                                <div>
+                                <h3>Online service</h3>
+                                <p>Access to multiplayer games</p>
+                                </div>
+                                <p class="addon-price" id="price-addon1"></p> <!-- Price updates dynamically -->
+                            </div>
+                        </div>
+
+                        <div class="addon" onclick="selectAddon(this, 'Larger storage')">
+                            <div class="checkbox">
+                                <img src="/multi-step-form-main/assets/images/icon-checkmark.svg" alt="Checkmark">
+                            </div>
+                            <div class="add-info">
+                                <div>
+                                    <h3>Larger storage</h3>
+                                    <p>Extra 1TB of cloud save</p>
+                                </div>
+                                <p class="addon-price" id="price-addon2"></p>
+                            </div>
+                        </div>
+
+                        <div class="addon" onclick="selectAddon(this, 'Customizable Profile')">
+                            <div class="checkbox">
+                                <img src="/multi-step-form-main/assets/images/icon-checkmark.svg" alt="Checkmark">
+                            </div>
+                            <div class="add-info">
+                                <div>
+                                    <h3>Customizable Profile</h3>
+                                    <p>Custom theme on your profile</p>
+                                </div>
+                                <p class="addon-price" id="price-addon3"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button onclick="prevStep(2)" class="go-back">Go Back</button>
+                <button id="nextButton3" class="button" disabled onclick="nextStep(3)">Next Step</button>
+                    </div>
+                </section>
+
+                
+                <section class="form-step" id="step4">
+                    <h2>Finishing up</h2>
+                    <p>Double-check everything looks OK before confirming.</p>
+                    <div id="summary-plan"></div>
+                    <div id="summary-addons"></div>
+                    <div id="total-price"></div>
+                    <div class="button-container">
+                        <button onclick="prevStep(3)" class="go-back">Go Back</button>
+                        <button id="nextButton4" class="confirm" onclick="nextStep(4)">Confirm</button>
+                    </div>
+                </section>
+
+            <section class="form-step thank-you" id="step5">
+                <img src="/multi-step-form-main/assets/images/icon-thank-you.svg" alt="">
+                <h3>Thank you!</h3>
+                <p>Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.</p>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+main {
+    background-color: #f0f6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Ubuntu", serif;
+}
+
+.container {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 750px;
+    display: flex;
+}
+
+.sidebar {
+    width: 40%;
+    background-image: url(/multi-step-form-main/assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-position: center;
+    padding-inline: 1.8em;
+    color: white;
+    border-radius: 10px;
+}
+
+.sidebar ol {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ol li {
+    margin: 5px 0;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.sidebar p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: hsl(229, 24%, 87%);
+}
+
+span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: hsl(231, 100%, 99%);
+}
+
+.sidebar ol li .span_text {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid hsl(206, 94%, 87%);
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar ol li.active .span_text {
+    font-weight: bold;
+    background: hsl(228, 100%, 84%);
+    color: hsl(213, 96%, 18%);
+}
+
+.form-container {
+    width: 70%;
+    padding: 0 20px;
+    margin-left: 3em;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: hsl(213, 96%, 18%);
+}
+
+.form-container p {
+    color: hsl(231, 11%, 63%);
+}
+
+input::placeholder {
+    color: hsl(231, 11%, 63%);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.form-step {
+    display: none;
+
+}
+
+.form-step.active {
+    display: block;
+}
+
+.input-con {
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 80%;
+    padding: 1.2em;
+    margin: 10px 0;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: hsl(213, 96%, 18%) !important;
+    background-color: transparent !important;
+    box-shadow: 0 0 0px 1000px white inset;
+    /* Forces background to white */
+}
+
+label {
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 4em;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 30%;
+    font-size: 1rem;
+}
+
+#nextButton1 {
+    display: block;
+    margin-left: auto;
+    background: #001f3f;
+    /* Pushes the button to the right */
+}
+
+/* Blurred and inactive button */
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.plan-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin-top: 2em;
+}
+
+/* Plan Selection Styling */
+.plan {
+    border: 1px solid #ccc;
+    padding: 1.2em 0.75em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.choice {
+    margin-top: 1.5em;
+    line-height: 0.4;
+}
+
+.plan.active {
+    border-color: hsl(213, 96%, 18%);
+    background: hsl(217, 100%, 97%);
+}
+
+h3 {
+    color: hsl(213, 96%, 18%);
+    font-size: 1.1rem;
+}
+
+.free-text {
+    display: none;
+    color: hsl(213, 96%, 18%) !important;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+/* Billing Toggle Styling */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    padding: 1em;
+    background-color: hsla(206, 94%, 87%, 0.281);
+
+}
+
+.billing-toggle p {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    border: 3px solid rgb(255, 123, 0);
+    border-radius: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #001f3f;
+}
+
+input:checked+.slider:before {
+    transform: translateX(14px);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5em;
+}
+
+.button-container .go-back {
+    background: none;
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+}
+
+.button-container .button {
+    background-color: hsl(213, 96%, 18%)
+}
+
+.addon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* margin-top: 20px; */
+}
+
+.addon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 1em;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 300px;
+    /* line-height: 0.5; */
+    background-color: white;
+}
+
+.addon.selected {
+    border-color: blue;
+    background-color: #e0f0ff;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    border: 2px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.checkbox img {
+    width: 16px;
+    height: 16px;
+    visibility: hidden;
+}
+
+.addon.selected .checkbox img {
+    visibility: visible;
+    background-color: hsl(243, 100%, 62%);
+}
+
+.add-info {
+    display: flex;
+    justify-content: space-between;
+    /* Push text to left, price to right */
+    align-items: center;
+    width: 100%;
+}
+
+.addon-price {
+    margin-left: auto;
+    /* Push price to the right */
+    text-align: right;
+}
+
+.confirm {
+    background-color: hsl(213, 96%, 18%);
+}
+
+#summary-plan {
+    background-color: hsl(217, 100%, 97%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 1px solid hsl(229, 24%, 87%);
+}
+
+#summary-addons {
+    background-color: hsl(217, 100%, 97%);
+    padding: 1em;
+}
+
+#summary-plan,
+#total-price {
+    display: flex;
+    justify-content: space-between;
+    /* Pushes content to the left and right */
+    align-items: center;
+    margin-top: 2em;
+    color: hsl(213, 96%, 18%);
+    padding: 1em 1em 1.5em 1em;
+    /* Keeps items vertically aligned */
+}
+
+#summary-addons p {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: hsl(213, 96%, 18%);
+    /* Creates spacing between each addon */
+}
+
+b {
+    font-size: 1.5em;
+    color: hsl(243, 100%, 62%);
+}
+
+.thank-you {
+    display: flex;
+    height: 70vh;
+    align-content: center;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.5;
+}
+
+.thank-you h3 {
+    font-size: 2rem;
+}
+
+.form-step {
+    display: none;
+    /* Hide all steps by default */
+}
+
+.form-step.active {
+    display: block;
+    /* Show only active step */
+}
+
+@media(max-width:50em) {
+    main{
+        background-color: hsl(206, 94%, 87%);
+    }
+    
+        .container {
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            position: absolute;
+        }
+
+        .sidebar {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            padding: 4em 0;
+            background-image: url(/multi-step-form-main/assets/images/bg-sidebar-mobile.svg);
+            background-size: cover;
+                border-radius: 0;
+        }
+        .sidebar p {
+            display: none;
+        }
+
+        .sidebar ol {
+            display: flex;
+            justify-content: center;
+            gap: 1.3em;
+        }
+
+        .form-container {
+            max-width: 85%;
+            width: 100%;
+            margin: 1em auto ;
+            position: relative;
+            bottom: 6%; 
+            background-color: hsl(231, 100%, 99%);
+            border-radius: 10px;
+        }
+        .form-step{
+            padding-inline: 1em;
+        }
+       .form-step p{
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        input {
+            font-size: 0.8rem;
+            padding: 1em;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 0.9em;
+        }
+        .plan-container{
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-: space-between;
+        }
+
+        .addon-container {
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .addon {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .billing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .summary {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
