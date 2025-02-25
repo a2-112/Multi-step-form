@@ -420,6 +420,7 @@ b {
     main{
         background-color: hsl(217, 100%, 97%);
         overflow-y: hidden;
+        margin: 0 auto;
     }
     
         .container {
