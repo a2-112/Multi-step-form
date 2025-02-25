@@ -417,6 +417,9 @@ b {
 }
 
 @media(max-width:45em) {
+    body{
+        margin: 0;
+    }
     main{
         background-color: hsl(217, 100%, 97%);
         overflow-y: hidden;
@@ -425,6 +428,7 @@ b {
     
         .container {
             flex-direction: column;
+            align-items: flex-start;
             height: 100%;
             width: 100%;
             margin: 0;
