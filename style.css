@@ -419,6 +419,7 @@ b {
 @media(max-width:45em) {
     main{
         background-color: hsl(217, 100%, 97%);
+        overflow-y: hidden;
     }
     
         .container {
