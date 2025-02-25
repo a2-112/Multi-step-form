@@ -2,7 +2,6 @@
 
 *{
     box-sizing: border-box;
-    margin: 0;
 }
 body{
     padding: 0;
@@ -468,10 +467,6 @@ b {
             border-radius: 10px;
             box-shadow: 5px 5px 10px hsl(229, 24%, 87%);
             z-index: 0;
-            padding: 2em;
-        }
-        .form-container p{
-            margin-top: 1em;
         }
         .form-step{
             padding-inline: 1em;
@@ -497,7 +492,7 @@ b {
         .plan{
            flex-direction: row;
            align-items: center;
-           padding: 1em;
+           padding: 0;
            gap: 1em;
         }
         .plan img{
@@ -508,14 +503,12 @@ b {
         .addon-container {
             width: 100%;
             flex-direction: column;
-            gap: 1em;
-            padding: 1em 0;
+            gap: 10px;
         }
-    
-       
+
         .addon {
             width: 100%;
-            padding: 1em;
+            padding: 10px;
             font-size: 14px;
             flex-direction: row;
             font-size: 0.8rem;
