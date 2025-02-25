@@ -2,6 +2,7 @@
 
 *{
     box-sizing: border-box;
+    margin: 0;
 }
 body{
     padding: 0;
@@ -445,6 +446,7 @@ b {
             background-image: url(/assets/images/bg-sidebar-mobile.svg);
             background-size: cover;
                 border-radius: 0;
+                margin: 0;
         }
         .sidebar p {
             display: none;
@@ -466,6 +468,10 @@ b {
             border-radius: 10px;
             box-shadow: 5px 5px 10px hsl(229, 24%, 87%);
             z-index: 0;
+            padding: 2em;
+        }
+        .form-container p{
+            margin-top: 1em;
         }
         .form-step{
             padding-inline: 1em;
@@ -491,7 +497,7 @@ b {
         .plan{
            flex-direction: row;
            align-items: center;
-           padding: 0;
+           padding: 1em;
            gap: 1em;
         }
         .plan img{
@@ -502,12 +508,14 @@ b {
         .addon-container {
             width: 100%;
             flex-direction: column;
-            gap: 10px;
+            gap: 1em;
+            padding: 1em 0;
         }
-
+    
+       
         .addon {
             width: 100%;
-            padding: 10px;
+            padding: 1em;
             font-size: 14px;
             flex-direction: row;
             font-size: 0.8rem;
