@@ -455,7 +455,7 @@ b {
             width: 100%;
             margin: 1em auto ;
             position: relative;
-            bottom: 6%; 
+            bottom: 8%; 
             background-color: hsl(231, 100%, 99%);
             border-radius: 10px;
             box-shadow: 5px 5px 10px hsl(229, 24%, 87%);
@@ -464,13 +464,10 @@ b {
         .form-step{
             padding-inline: 1em;
         }
-       .form-step p{
-            font-size: 1.5em;
-            font-weight: 500;
-        }
         input {
             font-size: 0.8rem;
             padding: 1em;
+            width: 100%;
         }
 
         button {
@@ -519,5 +516,9 @@ b {
         .summary {
             padding: 10px;
             font-size: 14px;
+        }
+        .thank-you{
+            height: 40vh;
+            align-items: center;
         }
     }
